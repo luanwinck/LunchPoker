@@ -34,7 +34,7 @@ class RestaurantAdapter(private val listener: OnRestaurantSelectedListener?, que
         fun bind(snapshot: DocumentSnapshot,
                  listener: OnRestaurantSelectedListener?) {
 
-            val restaurant = snapshot.toObject(RestaurantModel::class.java)
+             val restaurant = snapshot.toObject(RestaurantModel::class.java)
 //            val resources = view.resources
 
 //            Glide.with(imageView.getContext())

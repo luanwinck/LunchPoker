@@ -8,9 +8,14 @@
     android:id="@+id/itemRestaurant"
     >
 
-    <View
-        android:layout_width="match_parent"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/restaurantRecyclerView"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@android:color/black"/>
+        android:layout_gravity="center"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="1" />
 
 </android.support.constraint.ConstraintLayout>
