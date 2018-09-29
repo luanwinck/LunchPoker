@@ -1,7 +1,8 @@
-package br.com.cwi.lunchpoker
+package br.com.cwi.lunchpoker.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import br.com.cwi.lunchpoker.R
 
 class MainActivity : AppCompatActivity() {
 
