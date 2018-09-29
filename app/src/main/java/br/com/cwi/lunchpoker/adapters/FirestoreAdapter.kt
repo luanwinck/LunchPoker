@@ -5,7 +5,7 @@ import android.util.Log
 import com.google.firebase.firestore.*
 
 
-abstract class FirestoreAdapter<VH : RecyclerView.ViewHolder>(private var query: Query) : RecyclerView.Adapter<VH>(), EventListener<QuerySnapshot> {
+abstract class FirestoreAdapter<VH : RecyclerView.ViewHolder>(val query: Query) : RecyclerView.Adapter<VH>(), EventListener<QuerySnapshot> {
 
     private var listSnapshots = ArrayList<DocumentSnapshot>()
 
@@ -16,8 +16,8 @@ abstract class FirestoreAdapter<VH : RecyclerView.ViewHolder>(private var query:
     }
 
     fun startListening() {
-        if (query != null && registration == null) {
-            registration = query!!.addSnapshotListener(this)
+        if (registration == null) {
+            registration = query.addSnapshotListener(this)
         }
     }
 
