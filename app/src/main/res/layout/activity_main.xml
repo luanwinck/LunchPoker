@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
     android:id="@+id/itemRestaurant"
+    android:background="#2C1E1B"
     >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/restaurantRecyclerView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:paddingBottom="24dp"
-        android:paddingTop="24dp"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
         app:spanCount="1" />
 
