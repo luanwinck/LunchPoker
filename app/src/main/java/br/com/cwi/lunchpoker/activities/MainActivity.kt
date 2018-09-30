@@ -4,9 +4,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.LinearLayout
+import android.widget.Toast
 import br.com.cwi.lunchpoker.R
 import br.com.cwi.lunchpoker.adapters.RestaurantAdapter
 import br.com.cwi.lunchpoker.services.api.models.RestaurantModel
+import br.com.cwi.lunchpoker.shortToast
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,8 +20,8 @@ class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelected
         FirebaseFirestore.getInstance()
     }
 
-    override fun OnRestaurantSelectedListener(restaurant: DocumentSnapshot) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onRestaurantSelected(restaurant: RestaurantModel) {
+        shortToast(restaurant.name)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
