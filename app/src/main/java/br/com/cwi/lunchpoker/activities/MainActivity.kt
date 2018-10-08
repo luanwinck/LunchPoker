@@ -17,6 +17,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_card.*
 import kotlinx.android.synthetic.main.view_restaurant.*
+import android.app.Activity
+import android.app.Dialog
+import android.view.LayoutInflater
+import android.view.ViewGroup
+
 
 class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelectedListener {
 
@@ -25,9 +30,27 @@ class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelected
     }
 
     override fun onRestaurantSelected(restaurant: RestaurantModel) {
-        val dialog = CardView()
-        dialog.restaurant = restaurant
-        dialog.show(supportFragmentManager, "CardView")
+//        var dialog = CardView()
+
+
+        val dialoglayout = layoutInflater.inflate(R.layout.view_card, null)
+        val dialog = Dialog(this, android.R.style.Theme_Translucent_NoTitleBar)
+
+        dialog.setContentView(dialoglayout)
+        // dialog.isCancelable = true
+        dialog.setCanceledOnTouchOutside(true)
+        //dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+        dialog.show()
+
+
+        val rotate = ObjectAnimator.ofFloat(dialoglayout, View.ROTATION_Y, 180f, 0f)
+        rotate.setDuration(2500)
+        rotate.interpolator = AccelerateInterpolator()
+        rotate.start()
+
+        //dialog.restaurant = restaurant
+        //dialog.show(supportFragmentManager, "CardView")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
