@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelected
         FirebaseFirestore.getInstance()
     }
 
-    private var card: RelativeLayout? = null
-
     override fun onRestaurantSelected(restaurant: RestaurantModel) {
         val dialog = CardView()
         dialog.restaurant = restaurant
@@ -45,19 +43,5 @@ class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelected
 
         adapter.startListening()
 
-        card = findViewById(R.id.cardView)
-
-        card?.setOnClickListener {
-            shortToast("CARD")
-
-           this.rotate()
-        }
-    }
-
-    private fun rotate() {
-        val rotate = ObjectAnimator.ofFloat(card, View.ROTATION_Y, 180f, 0f)
-        rotate.setDuration(2500)
-        rotate.interpolator = AccelerateInterpolator()
-        rotate.start()
     }
 }
