@@ -20,6 +20,8 @@ class CardView : DialogFragment() {
 
     lateinit var restaurant: RestaurantModel
 
+    private var animationDone = false
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.view_card, container, false)
 
@@ -34,10 +36,12 @@ class CardView : DialogFragment() {
     }
 
     private fun rotate(card: View) {
-        val rotate = ObjectAnimator.ofFloat(card, View.ROTATION_Y, 180f, 0f)
-        rotate.setDuration(2500)
-        rotate.interpolator = AccelerateInterpolator()
-        rotate.start()
+        if (!animationDone) {
+            val rotate = ObjectAnimator.ofFloat(card, View.ROTATION_Y, 180f, 0f)
+            rotate.setDuration(2500)
+            rotate.interpolator = AccelerateInterpolator()
+            rotate.start()
+            animationDone = true
+        }
     }
-
 }
