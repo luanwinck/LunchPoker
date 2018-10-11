@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#a60000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="restaurantItem">#dfdfdf</color>
+
+    <color name="mercury">#E3E3E3</color>
 </resources>
