@@ -17,12 +17,18 @@ import br.com.cwi.lunchpoker.loadImage
 import br.com.cwi.lunchpoker.services.api.models.RestaurantModel
 import kotlinx.android.synthetic.main.view_card.*
 import kotlinx.android.synthetic.main.view_card.view.*
+import io.grpc.Deadline.after
+import android.animation.AnimatorSet
+import android.os.Handler
+
 
 class CardView : DialogFragment() {
 
     lateinit var restaurant: RestaurantModel
 
     private var animationDone = false
+
+    private val ANIMATION_DURATION = 2000
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.view_card, container, false)
@@ -50,8 +56,21 @@ class CardView : DialogFragment() {
 
     private fun transform(card: View) {
         if (!animationDone) {
-            textCardRestaurant.text = restaurant.name
-            imageCardRestaurant.loadImage(restaurant.image)
+            val fadeOut = ObjectAnimator.ofFloat(card, "alpha", 1f, 0f)
+            fadeOut.duration = ANIMATION_DURATION.toLong()
+
+            Handler().postDelayed({
+                textCardRestaurant.text = restaurant.name
+                imageCardRestaurant.loadImage(restaurant.image)
+            }, ANIMATION_DURATION.toLong())
+
+            val fadeIn = ObjectAnimator.ofFloat(card, "alpha", 0f, 1f)
+            fadeIn.duration = ANIMATION_DURATION.toLong()
+            val mAnimationSet = AnimatorSet()
+
+            mAnimationSet.play(fadeIn).after(fadeOut)
+            mAnimationSet.start()
+
             animationDone = true
         }
     }

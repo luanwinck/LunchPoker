@@ -27,7 +27,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
-            android:text="Clique para vizulaizar o restaurante escolhido"
+            android:text="Clique para visualizar o restaurante escolhido"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp"
