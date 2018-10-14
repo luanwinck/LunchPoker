@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
     android:id="@+id/itemRestaurant"
-    android:background="#2C1E1B"
+    android:background="#E3E3E3"
     >
 
     <android.support.v7.widget.RecyclerView

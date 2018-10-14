@@ -5,8 +5,8 @@
     android:minHeight="130dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="20dp"
-    app:cardBackgroundColor="#503C33"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="#D1D1D1"
     tools:context=".activities.MainActivity"
     >
 
@@ -17,8 +17,11 @@
 
         <ImageView
             android:id="@+id/imageRestaurant"
-            android:layout_width="130dp"
-            android:layout_height="130dp" />
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="10dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,14 +38,14 @@
                 android:textStyle="bold"
                 tools:text="Restaurante"
                 android:textSize="20sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:id="@+id/descriptionRestaurant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 tools:text="Descrição do restaurante, texto texto texto texto texto texto texto texto texto texto texto texto texto texto" />
 
         </LinearLayout>

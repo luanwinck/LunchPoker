@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "36690259835",
+    "firebase_url": "https://lunchpoker-e7445.firebaseio.com",
+    "project_id": "lunchpoker-e7445",
+    "storage_bucket": "lunchpoker-e7445.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36690259835:android:bb536a29c95b7577",
+        "android_client_info": {
+          "package_name": "br.com.cwi.lunchpoker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36690259835-o4m3hsavumqb12lp36agit5dvdb8p8jd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo3gbFHPxNMYZuC0rJTYwQ338mEj4VjBI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
