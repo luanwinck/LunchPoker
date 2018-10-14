@@ -13,7 +13,9 @@ import android.view.animation.AccelerateInterpolator
 import android.widget.ImageView
 import android.widget.Toast
 import br.com.cwi.lunchpoker.R
+import br.com.cwi.lunchpoker.loadImage
 import br.com.cwi.lunchpoker.services.api.models.RestaurantModel
+import kotlinx.android.synthetic.main.view_card.*
 import kotlinx.android.synthetic.main.view_card.view.*
 
 class CardView : DialogFragment() {
@@ -26,9 +28,10 @@ class CardView : DialogFragment() {
         var view = inflater.inflate(R.layout.view_card, container, false)
 
         restaurant.let {
-            view.textCardRestaurant.text = it.name
+//            view.textCardRestaurant.text = it.name
+//            view.imageCardRestaurant.loadImage(it.image)
             view.setOnClickListener {card ->
-                this.rotate(card)
+                this.transform(card)
             }
         }
 
@@ -37,10 +40,18 @@ class CardView : DialogFragment() {
 
     private fun rotate(card: View) {
         if (!animationDone) {
-            val rotate = ObjectAnimator.ofFloat(card, View.ROTATION_Y, 180f, 0f)
+            val rotate = ObjectAnimator.ofFloat(card, View.ROTATION_Y, 0f, 180f)
             rotate.setDuration(2500)
             rotate.interpolator = AccelerateInterpolator()
             rotate.start()
+            animationDone = true
+        }
+    }
+
+    private fun transform(card: View) {
+        if (!animationDone) {
+            textCardRestaurant.text = restaurant.name
+            imageCardRestaurant.loadImage(restaurant.image)
             animationDone = true
         }
     }

@@ -9,24 +9,29 @@
     >
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="240dp"
+        android:layout_height="300dp"
         android:orientation="horizontal"
         android:id="@+id/cardView">
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_launcher_background"/>
+            android:id="@+id/imageCardRestaurant"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            app:srcCompat="@drawable/logo_application"/>
 
         <TextView
             android:id="@+id/textCardRestaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="TextView"
-            tools:text="Allegro" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="Clique para vizulaizar o restaurante escolhido"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
