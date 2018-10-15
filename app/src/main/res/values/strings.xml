@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lunch Poker</string>
+    <string name="new_location">Novo local</string>
 </resources>
