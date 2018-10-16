@@ -21,6 +21,12 @@ import android.app.Activity
 import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import br.com.cwi.lunchpoker.services.ApiService
+import br.com.cwi.lunchpoker.services.EndService
+import br.com.cwi.lunchpoker.services.api.models.Restaurant
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelectedListener {
@@ -57,7 +63,24 @@ class MainActivity : AppCompatActivity(), RestaurantAdapter.OnRestaurantSelected
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val restaurants =  firebaseFirestore.collection("restaurantes").orderBy("name")
+//        val restaurants =  firebaseFirestore.collection("restaurantes").orderBy("name")
+        val request = ApiService.service.getLocais()
+
+        var restaurants: List<Restaurant> = ArrayList()
+
+        request.enqueue(object : Callback<List<Restaurant>> {
+            override fun onResponse(call: Call<List<Restaurant>>?, response: Response<List<Restaurant>>?) {
+                response?.body()?.let {
+                    restaurants = it
+                }
+            }
+
+            override fun onFailure(call: Call<List<Restaurant>>?, t: Throwable?) {
+            }
+        })
+
+
+
 
         val adapter = RestaurantAdapter(this, restaurants)
 
