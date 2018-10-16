@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +19,7 @@
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
+            android:noHistory="true"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +27,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewLocationActivity"></activity>
+
+        <activity android:name=".NewLocationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".LaunchActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ScanningActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true" />
+
+        <activity android:name=".RoomActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".InRoomActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
