@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.cwi.lunchpoker.NewLocationActivity">
+
+    <ImageView
+        android:id="@+id/imgOriental"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/guide66"
+        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintTop_toBottomOf="@+id/lblPizzaria"
+        app:srcCompat="@drawable/ic_asiatica" />
+
+    <ImageView
+        android:id="@+id/imgOutro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guide66"
+        app:layout_constraintTop_toBottomOf="@+id/lblPizzaria"
+        app:srcCompat="@drawable/ic_outros" />
+
+    <ImageView
+        android:id="@+id/imgChurrascaria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/guide33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPizzaria"
+        app:srcCompat="@drawable/ic_churrascaria" />
+
+    <ImageView
+        android:id="@+id/imgPizzaria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guide66"
+        app:layout_constraintTop_toBottomOf="@+id/lblType"
+        app:srcCompat="@drawable/ic_pizzaria" />
+
+    <ImageView
+        android:id="@+id/imgHamburgueria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/guide66"
+        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintTop_toBottomOf="@+id/lblType"
+        app:srcCompat="@drawable/ic_hamburguer" />
+
+    <EditText
+        android:id="@+id/txtLocalName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_edittext"
+        android:ems="10"
+        android:hint="Nome do local"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vwDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLocalName" />
+
+    <ImageView
+        android:id="@+id/imgRestaurante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/guide33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblType"
+        app:srcCompat="@drawable/ic_restaurante" />
+
+    <TextView
+        android:id="@+id/lblType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Selecione o tipo de local:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwDivider" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <TextView
+        android:id="@+id/lblPizzaria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pizzaria"
+        app:layout_constraintEnd_toEndOf="@+id/imgPizzaria"
+        app:layout_constraintStart_toStartOf="@+id/imgPizzaria"
+        app:layout_constraintTop_toBottomOf="@+id/imgPizzaria" />
+
+    <TextView
+        android:id="@+id/lblRestaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Restaurante"
+        app:layout_constraintEnd_toEndOf="@+id/imgRestaurante"
+        app:layout_constraintStart_toStartOf="@+id/imgRestaurante"
+        app:layout_constraintTop_toBottomOf="@+id/imgRestaurante" />
+
+    <TextView
+        android:id="@+id/lblHamburgueria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hamburgueria"
+        app:layout_constraintEnd_toEndOf="@+id/imgHamburgueria"
+        app:layout_constraintStart_toStartOf="@+id/imgHamburgueria"
+        app:layout_constraintTop_toBottomOf="@+id/imgHamburgueria" />
+
+    <TextView
+        android:id="@+id/lblChurrascaria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:text="Churrascaria"
+        app:layout_constraintEnd_toEndOf="@+id/imgChurrascaria"
+        app:layout_constraintStart_toStartOf="@+id/imgChurrascaria"
+        app:layout_constraintTop_toBottomOf="@+id/imgChurrascaria" />
+
+    <TextView
+        android:id="@+id/lblOutro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Outro"
+        app:layout_constraintEnd_toEndOf="@+id/imgOutro"
+        app:layout_constraintStart_toStartOf="@+id/imgOutro"
+        app:layout_constraintTop_toBottomOf="@+id/imgOutro" />
+
+    <TextView
+        android:id="@+id/lblOriental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Oriental"
+        app:layout_constraintEnd_toStartOf="@+id/guide66"
+        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintTop_toBottomOf="@+id/imgOriental" />
+</android.support.constraint.ConstraintLayout>
