@@ -1,7 +1,5 @@
 package br.com.cwi.lunchpoker.models
 
-import br.com.cwi.lunchpoker.LocationType
-
 class ApiReturnRoom {
     var status:         Boolean = false
     var message:        String? = null

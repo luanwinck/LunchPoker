@@ -1,13 +1,16 @@
 package br.com.cwi.lunchpoker.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.cwi.lunchpoker.LocationType
+import br.com.cwi.lunchpoker.enums.LocationType
 import br.com.cwi.lunchpoker.R
 import br.com.cwi.lunchpoker.Session
 import br.com.cwi.lunchpoker.models.Location
@@ -61,14 +64,7 @@ class HolderLocation(itemView: View) : RecyclerView.ViewHolder(itemView) {
         if(Session.locales.indexOf(location.id.toString()) > -1){
             itemView.imgPlus.setImageResource(R.drawable.ic_remove)
 
-            val matrix = ColorMatrix()
-            matrix.setSaturation(0f)
-            val filter = ColorMatrixColorFilter(matrix)
-
-            itemView.imgPlus.setColorFilter(filter)
-            itemView.imgPlus.alpha = 0.20f
-        }else{
-            itemView.imgPlus.setImageResource(R.drawable.ic_plus)
+            itemView.ctlItem.setBackgroundColor(Color.parseColor("#10000000"))
 
             val matrix = ColorMatrix()
             matrix.setSaturation(1f)
@@ -76,14 +72,40 @@ class HolderLocation(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
             itemView.imgPlus.setColorFilter(filter)
             itemView.imgPlus.alpha = 1f
+        }else{
+            itemView.imgPlus.setImageResource(R.drawable.ic_plus)
+
+            itemView.ctlItem.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+
+            val matrix = ColorMatrix()
+            matrix.setSaturation(0f)
+            val filter = ColorMatrixColorFilter(matrix)
+
+            itemView.imgPlus.setColorFilter(filter)
+            itemView.imgPlus.alpha = 0.7f
         }
 
-        itemView.imgPlus.setOnClickListener {
+        itemView.ctlItem.setOnClickListener {
 
             if(Session.locales.indexOf(location.id.toString()) > -1){
                 Session.locales.remove(location.id.toString())
 
                 itemView.imgPlus.setImageResource(R.drawable.ic_plus)
+
+                itemView.ctlItem.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+
+                val matrix = ColorMatrix()
+                matrix.setSaturation(0f)
+                val filter = ColorMatrixColorFilter(matrix)
+
+                itemView.imgPlus.setColorFilter(filter)
+                itemView.imgPlus.alpha = 0.7f
+            }else{
+                Session.locales.add(location.id.toString())
+
+                itemView.imgPlus.setImageResource(R.drawable.ic_remove)
+
+                itemView.ctlItem.setBackgroundColor(Color.parseColor("#10000000"))
 
                 val matrix = ColorMatrix()
                 matrix.setSaturation(1f)
@@ -91,17 +113,6 @@ class HolderLocation(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
                 itemView.imgPlus.setColorFilter(filter)
                 itemView.imgPlus.alpha = 1f
-            }else{
-                Session.locales.add(location.id.toString())
-
-                itemView.imgPlus.setImageResource(R.drawable.ic_remove)
-
-                val matrix = ColorMatrix()
-                matrix.setSaturation(0f)
-                val filter = ColorMatrixColorFilter(matrix)
-
-                itemView.imgPlus.setColorFilter(filter)
-                itemView.imgPlus.alpha = 0.20f
             }
 
         }

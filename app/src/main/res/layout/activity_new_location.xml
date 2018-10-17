@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.cwi.lunchpoker.NewLocationActivity">
+    tools:context="br.com.cwi.lunchpoker.activities.NewLocationActivity">
 
     <ImageView
         android:id="@+id/imgOriental"
@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toStartOf="@+id/guide66"
-        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintStart_toStartOf="@+id/guide30"
         app:layout_constraintTop_toBottomOf="@+id/lblPizzaria"
         app:srcCompat="@drawable/ic_asiatica" />
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
-        app:layout_constraintEnd_toStartOf="@+id/guide33"
+        app:layout_constraintEnd_toStartOf="@+id/guide30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblPizzaria"
         app:srcCompat="@drawable/ic_churrascaria" />
@@ -67,7 +67,7 @@
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toStartOf="@+id/guide66"
-        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintStart_toStartOf="@+id/guide30"
         app:layout_constraintTop_toBottomOf="@+id/lblType"
         app:srcCompat="@drawable/ic_hamburguer" />
 
@@ -104,7 +104,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
-        app:layout_constraintEnd_toStartOf="@+id/guide33"
+        app:layout_constraintEnd_toStartOf="@+id/guide30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblType"
         app:srcCompat="@drawable/ic_restaurante" />
@@ -120,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/vwDivider" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guide33"
+        android:id="@+id/guide30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -193,6 +193,6 @@
         android:layout_marginEnd="8dp"
         android:text="Oriental"
         app:layout_constraintEnd_toStartOf="@+id/guide66"
-        app:layout_constraintStart_toStartOf="@+id/guide33"
+        app:layout_constraintStart_toStartOf="@+id/guide30"
         app:layout_constraintTop_toBottomOf="@+id/imgOriental" />
 </android.support.constraint.ConstraintLayout>
