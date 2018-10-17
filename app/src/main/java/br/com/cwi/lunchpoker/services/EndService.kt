@@ -19,6 +19,10 @@ interface EndService {
     @GET("v1/setsalas")
     fun setSalas(@Query("locais") locais: String): Observable<ApiReturnRoom>
 
+    @GET("v1/unsetvoto")
+    fun unSetVoto(@Query("sala") sala: String,
+                @Query("local") local: Int): Observable<ApiReturn>
+
     @GET("v1/setvoto")
     fun setVoto(@Query("sala") sala: String,
                 @Query("local") local: Int): Observable<ApiReturn>

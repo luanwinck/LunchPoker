@@ -7,4 +7,8 @@
         android:icon="@drawable/ic_qr_code"
         android:title="Ler QR Code"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/btnSobre"
+        android:title="Sobre"
+        app:showAsAction="never" />
 </menu>
