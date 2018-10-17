@@ -75,18 +75,18 @@ class NewLocationActivity : AppCompatActivity() {
     }
 
     fun setLocal(){
-        retrofitServe.setlocais(txtLocalName.text.toString(), locationType)
+        retrofitServe.setLocais(txtLocalName.text.toString(), locationType)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ result ->
                     result.let {
                         if(it.status){
-                            dialog!!.dismiss()
                             Toast.makeText(this,txtLocalName.text.toString()+" salvo com sucesso!",Toast.LENGTH_SHORT).show()
                             finish()
                         }else{
                             Toast.makeText(this,"Erro: "+it.message,Toast.LENGTH_SHORT).show()
                         }
+                        dialog!!.dismiss()
                     }
                 }, {
                     it.message?.let {
@@ -94,6 +94,7 @@ class NewLocationActivity : AppCompatActivity() {
                     } ?: run {
                         Toast.makeText(this,"Um erro inesperado aconteceu!",Toast.LENGTH_SHORT).show()
                     }
+                    dialog!!.dismiss()
         })
     }
 
@@ -106,10 +107,14 @@ class NewLocationActivity : AppCompatActivity() {
     //onClicks dos itens de menu da action bar
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == R.id.btnSalvar){
-            dialog = ProgressDialog.show(this, "",
-                    "Salvando local...", true)
-            dialog!!.setCancelable(false)
-            setLocal()
+            if(txtLocalName.text.toString() != "") {
+                dialog = ProgressDialog.show(this, "",
+                        "Salvando local...", true)
+                dialog!!.setCancelable(false)
+                setLocal()
+            }else{
+                Toast.makeText(this,"Informe o nome do local!",Toast.LENGTH_SHORT).show()
+            }
         }
 
         return super.onOptionsItemSelected(item)

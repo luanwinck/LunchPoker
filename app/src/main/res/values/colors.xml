@@ -8,4 +8,6 @@
     <color name="mercury">#E3E3E3</color>
     <color name="silver">#b8b8b8</color>
     <color name="boulder">#7d7d7d</color>
+    <color name="white">#ffffff</color>
+    <color name="mineShaft">#3e3e3e</color>
 </resources>
